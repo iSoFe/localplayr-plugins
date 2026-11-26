@@ -1,0 +1,11 @@
+{
+  "id": "hello",
+  "name": "Hello Plugin",
+  "versionCode": 1,
+  "versionName": "1.0.0",
+  "apiVersion": 1,
+  "entryClass": "com.example.plugin.hello.HelloPlugin",
+  "minAppVersionCode": 1,
+  "author": "You",
+  "description": "A tiny example: adds a tab, a player menu action and a settings page."
+}
