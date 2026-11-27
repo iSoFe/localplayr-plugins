@@ -33,6 +33,8 @@ tools/make_index.py  builds dist/plugins.json
 .github/workflows/   the build + publish workflow
 ```
 
+Included plugins: `hello` (a tiny example) and `clipper` (mark a part of a video, replay it, or save it as a file).
+
 To create a plugin, copy `plugins/hello`, rename the folder, and change `plugin.json`, the
 `namespace` / `applicationId` in `build.gradle.kts`, and the package and class names.
 New folders under `plugins/` are picked up automatically.
