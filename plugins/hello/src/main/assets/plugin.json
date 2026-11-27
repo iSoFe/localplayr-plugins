@@ -7,5 +7,7 @@
   "entryClass": "com.example.plugin.hello.HelloPlugin",
   "minAppVersionCode": 1,
   "author": "You",
-  "description": "A tiny example: adds a tab, a player menu action and a settings page."
+  "description": "A tiny example: adds a tab, a player menu action and a settings page.",
+  "color": "#4C8DFF",
+  "icon": "star"
 }

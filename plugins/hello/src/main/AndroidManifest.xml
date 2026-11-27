@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Required by Gradle for an application module. The app never reads this file: a plugin cannot
+     declare activities, services or permissions (see PLUGIN_GUIDE.md). -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
     <application
         android:allowBackup="false"
         android:label="Hello Plugin" />
+
 </manifest>

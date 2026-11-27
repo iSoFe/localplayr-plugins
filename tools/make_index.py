@@ -40,6 +40,8 @@ for module in sorted((root / "plugins").iterdir()):
         "minAppVersionCode": manifest.get("minAppVersionCode", 0),
         "author": manifest.get("author", ""),
         "description": manifest.get("description", ""),
+        "color": manifest.get("color", ""),
+        "icon": manifest.get("icon", ""),
         "url": f"{base_url}/{file_name}",
         "sha256": hashlib.sha256(data).hexdigest(),
         "sizeBytes": len(data),

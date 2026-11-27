@@ -13,6 +13,11 @@ all take effect after an app restart**. The app offers a Restart button for that
 
 ## The files of a plugin
 
+### `src/main/AndroidManifest.xml`
+
+Gradle requires one for every plugin module. Copy it from `plugins/hello` and change only the label.
+It stays empty of components: the app does not read it.
+
 ### `src/main/assets/plugin.json`
 
 ```json
@@ -25,7 +30,9 @@ all take effect after an app restart**. The app offers a Restart button for that
   "entryClass": "com.example.plugin.clipper.ClipperPlugin",
   "minAppVersionCode": 14,
   "author": "You",
-  "description": "Save a part of a video as a clip."
+  "description": "Save a part of a video as a clip.",
+  "color": "#FF7A59",
+  "icon": "scissors"
 }
 ```
 
@@ -34,6 +41,8 @@ all take effect after an app restart**. The app offers a Restart button for that
 * `apiVersion`: the plugin API this was written for (currently `1`).
 * `entryClass`: the full name of your class that extends `LocalPlayerPlugin`.
 * `minAppVersionCode`: the oldest app build the plugin works with.
+* `color`: the plugin's accent color (`#RRGGBB`) used for its card in the store. Optional (a color is picked from the id if missing).
+* `icon`: the glyph on the card. One of `scissors`, `link`, `music`, `caption`, `chart`, `list`, `star`, `bolt`, `globe`, `download`, `play`, `folder`, `heart`, `clock`, `settings`, `info`; anything else shows a puzzle piece.
 
 ### The entry class
 
