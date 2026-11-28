@@ -38,7 +38,7 @@ It stays empty of components: the app does not read it.
 
 * `id`: lowercase letters, digits, `.`, `_`, `-`; 2-64 characters; never changes.
 * `versionCode`: whole number. **Raise it on every release** or the store will not offer an update.
-* `apiVersion`: the plugin API this was written for (currently `1`).
+* `apiVersion`: the plugin API this was written for (currently `2`; 1 is still supported).
 * `entryClass`: the full name of your class that extends `LocalPlayerPlugin`.
 * `minAppVersionCode`: the oldest app build the plugin works with.
 * `color`: the plugin's accent color (`#RRGGBB`) used for its card in the store. Optional (a color is picked from the id if missing).
@@ -58,13 +58,15 @@ class ClipperPlugin : LocalPlayerPlugin() {
 }
 ```
 
-## The API (version 1) - `com.example.plugins`
+## The API (version 2) - `com.example.plugins`
 
 | What | Description |
 |---|---|
 | `PluginHost.registerTab(PluginTab)` | A new section in the bottom bar / side rail. `content` is a Composable shown in the main area. |
 | `PluginHost.registerPlayerAction(PluginPlayerAction)` | An item in the player's three-dots menu. `onClick` receives a `PluginPlayerContext`. |
 | `PluginHost.registerSettingsPage(PluginSettingsPage)` | A page under Settings > Plugins > your plugin. |
+| `PluginHost.declareSettings(listOf(...))` | Declares the plugin's settings: `PluginSetting.Header`, `Switch`, `Slider`, `Choice`, `Text`. The app draws them in its own style behind the plugin's **Settings** button and stores the values. |
+| `PluginHost.settings` | Reads the values: `getBoolean(key)`, `getInt(key)`, `getFloat(key)`, `getString(key)` (unset values give the declared default). `revision` changes whenever a value does. |
 | `PluginHost.currentPlayer()` | The shared Media3 `ExoPlayer` (or null). Main thread only. |
 | `PluginHost.currentVideo()` | The `Video` now playing (or null). |
 | `PluginHost.libraryVideos()` | The videos the library shows right now. |

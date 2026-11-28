@@ -6,6 +6,7 @@ import androidx.compose.material.icons.filled.ContentCut
 import com.example.plugins.LocalPlayerPlugin
 import com.example.plugins.PluginHost
 import com.example.plugins.PluginPlayerAction
+import com.example.plugins.PluginSetting
 import com.example.plugins.PluginTab
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -23,6 +24,32 @@ class ClipperPlugin : LocalPlayerPlugin() {
     override fun onLoad(host: PluginHost) {
         val store = ClipStore(File(host.dataDir, "clips.json"))
         val playback = ClipPlayback(host, scope)
+
+        host.declareSettings(
+            listOf(
+                PluginSetting.Header(tr("Marking", "التحديد")),
+                PluginSetting.Slider(
+                    key = "marginBefore",
+                    title = tr("Margin before the start", "هامش قبل البداية"),
+                    summary = tr("Adds a little extra before the point you mark.", "يضيف جزءًا صغيرًا قبل النقطة التي تحدّدها."),
+                    default = 0f, min = 0f, max = 10f, step = 1f, unit = tr(" s", " ث")
+                ),
+                PluginSetting.Slider(
+                    key = "marginAfter",
+                    title = tr("Margin after the end", "هامش بعد النهاية"),
+                    summary = tr("Adds a little extra after the point you mark.", "يضيف جزءًا صغيرًا بعد النقطة التي تحدّدها."),
+                    default = 0f, min = 0f, max = 10f, step = 1f, unit = tr(" s", " ث")
+                ),
+                PluginSetting.Header(tr("Saving as a video", "الحفظ كفيديو")),
+                PluginSetting.Text(
+                    key = "exportFolder",
+                    title = tr("Folder name", "اسم المجلد"),
+                    summary = tr("Clips are saved in Movies/<this name>.", "تُحفظ المقاطع في Movies/<هذا الاسم>."),
+                    default = "Clipper",
+                    hint = "Clipper"
+                )
+            )
+        )
 
         host.registerPlayerAction(
             PluginPlayerAction(
@@ -55,14 +82,19 @@ class ClipperPlugin : LocalPlayerPlugin() {
                     ctx.positionMs <= start.second + 500 ->
                         host.toast(tr("The end must be after the start", "يجب أن تكون النهاية بعد البداية"))
                     else -> {
+                        val before = host.settings.getInt("marginBefore") * 1000L
+                        val after = host.settings.getInt("marginAfter") * 1000L
+                        val startMs = (start.second - before).coerceAtLeast(0L)
+                        val endRaw = ctx.positionMs + after
+                        val endMs = if (ctx.durationMs > 0L) endRaw.coerceAtMost(ctx.durationMs) else endRaw
                         val clip = Clip(
                             id = System.currentTimeMillis().toString(),
-                            name = "${video.displayTitle} ${formatTime(start.second)}-${formatTime(ctx.positionMs)}",
+                            name = "${video.displayTitle} ${formatTime(startMs)}-${formatTime(endMs)}",
                             videoId = video.id,
                             videoUri = video.uri.toString(),
                             videoTitle = video.displayTitle,
-                            startMs = start.second,
-                            endMs = ctx.positionMs,
+                            startMs = startMs,
+                            endMs = endMs,
                             createdAt = System.currentTimeMillis()
                         )
                         store.add(clip)

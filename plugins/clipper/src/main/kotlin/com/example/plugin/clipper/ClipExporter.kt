@@ -20,14 +20,15 @@ import java.nio.ByteBuffer
  * which can be a few seconds earlier.
  */
 object ClipExporter {
-    suspend fun export(context: Context, clip: Clip): Result<String> = withContext(Dispatchers.IO) {
+    suspend fun export(context: Context, clip: Clip, folder: String = "Clipper"): Result<String> = withContext(Dispatchers.IO) {
         runCatching {
             val resolver = context.contentResolver
+            val safeFolder = folder.replace(Regex("[^\\p{L}\\p{N} _.-]"), "_").trim().ifBlank { "Clipper" }
             val safeName = clip.name.replace(Regex("[^\\p{L}\\p{N} _.-]"), "_").trim().ifBlank { "clip" }
             val values = ContentValues().apply {
                 put(MediaStore.Video.Media.DISPLAY_NAME, "$safeName.mp4")
                 put(MediaStore.Video.Media.MIME_TYPE, "video/mp4")
-                put(MediaStore.Video.Media.RELATIVE_PATH, "Movies/Clipper")
+                put(MediaStore.Video.Media.RELATIVE_PATH, "Movies/$safeFolder")
                 put(MediaStore.Video.Media.IS_PENDING, 1)
             }
             val collection = MediaStore.Video.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY)
@@ -42,7 +43,7 @@ object ClipExporter {
                 resolver.delete(target, null, null)
                 throw t
             }
-            "Movies/Clipper/$safeName.mp4"
+            "Movies/$safeFolder/$safeName.mp4"
         }
     }
 

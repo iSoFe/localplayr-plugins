@@ -24,4 +24,5 @@ dependencies {
   compileOnly(libs.androidx.compose.ui.graphics)
   compileOnly(libs.androidx.media3.exoplayer)
   compileOnly(libs.androidx.core.ktx)
+  compileOnly(libs.kotlinx.coroutines.core)
 }

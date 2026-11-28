@@ -163,7 +163,7 @@ fun ClipsScreen(
                             exporting = exporting + clip.id
                             host.toast(tr("Saving the clip…", "جارٍ حفظ المقطع…"))
                             scope.launch {
-                                val result = ClipExporter.export(host.appContext, clip)
+                                val result = ClipExporter.export(host.appContext, clip, host.settings.getString("exportFolder"))
                                 exporting = exporting - clip.id
                                 result.fold(
                                     onSuccess = { path ->
