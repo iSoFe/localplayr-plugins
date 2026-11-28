@@ -1,0 +1,13 @@
+{
+  "id": "clipper",
+  "name": "Clipper",
+  "versionCode": 2,
+  "versionName": "1.1.0",
+  "apiVersion": 2,
+  "entryClass": "com.example.plugin.clipper.ClipperPlugin",
+  "minAppVersionCode": 1,
+  "author": "You",
+  "description": "Mark a part of a video (e.g. minute 35 to 40) from the player menu, keep it as a clip, replay just that part later, or save it as its own video file.",
+  "color": "#FF7A59",
+  "icon": "scissors"
+}

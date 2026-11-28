@@ -1,0 +1,34 @@
+{
+  "plugins": [
+    {
+      "id": "clipper",
+      "name": "Clipper",
+      "versionCode": 2,
+      "versionName": "1.1.0",
+      "apiVersion": 2,
+      "minAppVersionCode": 1,
+      "author": "You",
+      "description": "Mark a part of a video (e.g. minute 35 to 40) from the player menu, keep it as a clip, replay just that part later, or save it as its own video file.",
+      "color": "#FF7A59",
+      "icon": "scissors",
+      "url": "https://raw.githubusercontent.com/iSoFe/localplayr-plugins/builds/clipper-2.apk",
+      "sha256": "587f47e150f3c62f0095406847d0fdced0d7a67eaf8f35093787e705cb861d8d",
+      "sizeBytes": 2795556
+    },
+    {
+      "id": "hello",
+      "name": "Hello Plugin",
+      "versionCode": 1,
+      "versionName": "1.0.0",
+      "apiVersion": 1,
+      "minAppVersionCode": 1,
+      "author": "You",
+      "description": "A tiny example: adds a tab, a player menu action and a settings page.",
+      "color": "#4C8DFF",
+      "icon": "star",
+      "url": "https://raw.githubusercontent.com/iSoFe/localplayr-plugins/builds/hello-1.apk",
+      "sha256": "37a34cabe3a7aba6c0ffafd13aa796e1f13471dcaf4abd0883801dd044315f27",
+      "sizeBytes": 2696184
+    }
+  ]
+}

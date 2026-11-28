@@ -1,0 +1,7 @@
+com.example.plugin.clipper-pngs-0 /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/clipper/build/generated/res/pngs/debug
+com.example.plugin.clipper-updated_navigation_xml-1 /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/clipper/build/generated/updated_navigation_xml/debug
+com.example.plugin.clipper-packageDebugResources-2 /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/clipper/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.example.plugin.clipper-packageDebugResources-3 /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/clipper/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.example.plugin.clipper-debug-4 /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/clipper/build/intermediates/merged_res/debug/mergeDebugResources
+com.example.plugin.clipper-debug-5 /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/clipper/src/debug/res
+com.example.plugin.clipper-main-6 /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/clipper/src/main/res

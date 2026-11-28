@@ -1,0 +1,31 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/src/main/AndroidManifest.xml:4:1-10:12
+INJECTED from /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/src/main/AndroidManifest.xml:4:1-10:12
+INJECTED from /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/src/main/AndroidManifest.xml:4:1-10:12
+INJECTED from /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/src/main/AndroidManifest.xml:4:1-10:12
+	package
+		INJECTED from /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/src/main/AndroidManifest.xml:4:11-69
+application
+ADDED from /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/src/main/AndroidManifest.xml:6:5-8:40
+INJECTED from /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/src/main/AndroidManifest.xml:6:5-8:40
+	android:extractNativeLibs
+		INJECTED from /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/src/main/AndroidManifest.xml
+	android:label
+		ADDED from /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/src/main/AndroidManifest.xml:8:9-37
+	android:allowBackup
+		ADDED from /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/src/main/AndroidManifest.xml:7:9-36
+uses-sdk
+INJECTED from /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/src/main/AndroidManifest.xml
+INJECTED from /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/src/main/AndroidManifest.xml

@@ -1,0 +1,7 @@
+com.example.plugin.hello-pngs-0 /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/build/generated/res/pngs/debug
+com.example.plugin.hello-updated_navigation_xml-1 /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/build/generated/updated_navigation_xml/debug
+com.example.plugin.hello-packageDebugResources-2 /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.example.plugin.hello-packageDebugResources-3 /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.example.plugin.hello-debug-4 /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/build/intermediates/merged_res/debug/mergeDebugResources
+com.example.plugin.hello-debug-5 /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/src/debug/res
+com.example.plugin.hello-main-6 /home/runner/work/localplayr-plugins/localplayr-plugins/plugins/hello/src/main/res
